@@ -9,9 +9,7 @@ const index = () => {
     return result;
   }
 
-  const trying = callback();
-
-  console.log(trying)
+  callback();
 
 };
 
