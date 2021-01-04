@@ -50,11 +50,17 @@ var WorldScene = new Phaser.Class({
     obstacles.setCollisionByExclusion([-1]);
 
     this.player = this.physics.add.sprite(50, 100, 'player', 6);
+    this.physics.world.bounds.width = map.widthInPixels;
+    this.physics.world.bounds.height = map.heightInPixels;
 
     this.player.setCollideWorldBounds(true);
 
-
     this.cursors = this.input.keyboard.createCursorKeys();
+
+    this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+    this.cameras.main.startFollow(this.player);
+    this.cameras.main.roundPixels = true;
+
   },
 
   update: function (time, delta)
