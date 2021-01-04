@@ -19,7 +19,7 @@ const world = () => {
 
           this.load.tilemapTiledJSON('map', 'assets/map/map.json');
 
-          this.load.spritesheet('player', 'assets/RPG_assets.png', { frameWidth: 16, frameHeight: 16 });
+          this.load.spritesheet('player', 'assets/heroes.png', { frameWidth: 16, frameHeight: 16 });
     },
 
     create: function ()

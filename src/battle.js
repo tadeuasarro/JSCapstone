@@ -11,7 +11,7 @@ const battle = () => {
         Phaser.GameObjects.Sprite.call(this, scene, x, y, texture, frame)
         this.type = type;
         this.maxHp = this.hp = hp;
-        this.damage = damage; // default damage
+        this.damage = damage;
     },
     attack: function(target) {
         target.takeDamage(this.damage);
@@ -36,11 +36,10 @@ const battle = () => {
     initialize:
     function PlayerCharacter(scene, x, y, texture, frame, type, hp, damage) {
         Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
-        // flip the image so I don't have to edit it manually
         this.flipX = true;
         this.setScale(2);
     }
-});
+  });
 
   var BootScene = new Phaser.Class({
 
@@ -56,9 +55,9 @@ const battle = () => {
     preload: function ()
     {
         // load resources
-        this.load.spritesheet('player', 'assets/RPG_assets.png', { frameWidth: 16, frameHeight: 16 });
-        this.load.image('dragonblue', 'assets/dragonblue.png');
-        this.load.image('dragonorrange', 'assets/dragonorrange.png');
+        this.load.spritesheet('player', 'assets/heroes.png', { frameWidth: 16, frameHeight: 16 });
+        this.load.image('dragonblue', 'assets/blue.png');
+        this.load.image('dragonorange', 'assets/orange.png');
     },
 
     create: function ()
@@ -90,16 +89,17 @@ const battle = () => {
       var mage = new PlayerCharacter(this, 250, 100, 'player', 4, 'Mage', 80, 8);
       this.add.existing(mage);
 
-      var dragonblue = new Enemy(this, 50, 50, 'dragonblue', null, 'Dragon', 50, 3);
-      this.add.existing(dragonblue);
+      var dragonBlue = new Enemy(this, 50, 50, 'dragonblue', 17, 'Dragon', 50, 3);
+      this.add.existing(dragonBlue);
 
-      var dragonOrange = new Enemy(this, 50, 100, 'dragonorrange', null,'Dragon2', 50, 3);
+      var dragonOrange = new Enemy(this, 50, 100, 'dragonorange', 18,'Dragon2', 50, 3);
       this.add.existing(dragonOrange);
+
 
       // array with heroes
       this.heroes = [ warrior, mage ];
       // array with enemies
-      this.enemies = [ dragonblue, dragonOrange ];
+      //this.enemies = [ dragonblue, dragonOrange ];
       // array with both parties, who will attack
       this.units = this.heroes.concat(this.enemies);
 
