@@ -51,9 +51,8 @@ var WorldScene = new Phaser.Class({
 
     this.player = this.physics.add.sprite(50, 100, 'player', 6);
 
-    this.physics.world.bounds.width = map.widthInPixels;
-    this.physics.world.bounds.height = map.heightInPixels;
     this.player.setCollideWorldBounds(true);
+
 
     this.cursors = this.input.keyboard.createCursorKeys();
   },
