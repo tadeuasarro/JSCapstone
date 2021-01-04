@@ -1,46 +1,72 @@
 import Phaser from 'phaser'
 
-function preload() {
-  this.load.setBaseURL('http://labs.phaser.io')
-  this.load.image('sky', 'assets/skies/space3.png')
-  this.load.image('logo', 'assets/sprites/phaser3-logo.png')
-  this.load.image('red', 'assets/particles/red.png')
-}
+var BootScene = new Phaser.Class({
 
-function create() {
-  this.add.image(400, 300, 'sky')
+  Extends: Phaser.Scene,
 
-  const particles = this.add.particles('red')
+  initialize:
 
-  const emitter = particles.createEmitter({
-    speed: 100,
-    scale: { start: 1, end: 0 },
-    blendMode: 'ADD',
-  })
+  function BootScene ()
+  {
+      Phaser.Scene.call(this, { key: 'BootScene' });
+  },
 
-  const logo = this.physics.add.image(400, 100, 'logo')
+  preload: function ()
+  {
+        this.load.image('tiles', 'assets/map/spritesheet.png');
 
-  logo.setVelocity(100, 200)
-  logo.setBounce(1, 1)
-  logo.setCollideWorldBounds(true)
+        this.load.tilemapTiledJSON('map', 'assets/map/map.json');
 
-  emitter.startFollow(logo)
-}
+        this.load.spritesheet('player', 'assets/RPG_assets.png', { frameWidth: 16, frameHeight: 16 });
+  },
 
-const config = {
+  create: function ()
+  {
+      this.scene.start('WorldScene');
+  }
+});
+
+var WorldScene = new Phaser.Class({
+
+  Extends: Phaser.Scene,
+
+  initialize:
+
+  function WorldScene ()
+  {
+    Phaser.Scene.call(this, { key: 'WorldScene' });
+  },
+  preload: function ()
+  {
+
+  },
+  create: function ()
+  {
+    var map = this.make.tilemap({ key: 'map' });
+    var tiles = map.addTilesetImage('spritesheet', 'tiles');
+
+    var grass = map.createStaticLayer('Grass', tiles, 0, 0);
+    var obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
+    obstacles.setCollisionByExclusion([-1]);
+  }
+});
+
+var config = {
   type: Phaser.AUTO,
-  width: 800,
-  height: 600,
+  parent: 'content',
+  width: 320,
+  height: 240,
+  zoom: 2,
+  pixelArt: true,
   physics: {
-    default: 'arcade',
-    arcade: {
-      gravity: { y: 200 },
-    },
+      default: 'arcade',
+      arcade: {
+          gravity: { y: 0 }
+      }
   },
-  scene: {
-    preload: preload,
-    create: create,
-  },
-}
-
-const game = new Phaser.Game(config)
+  scene: [
+      BootScene,
+      WorldScene
+  ]
+};
+var game = new Phaser.Game(config);
