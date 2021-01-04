@@ -4,6 +4,14 @@ import createScore from './create_score';
 
 const index = () => {
 
+  async function callback() {
+    const result = await fetchGame();
+    return result;
+  }
+
+  const trying = callback();
+
+  console.log(trying)
 
 };
 
