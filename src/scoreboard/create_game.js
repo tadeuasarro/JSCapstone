@@ -1,5 +1,4 @@
 const createGame = () => {
-
   const gatherData = async () => {
     const result = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games', {
       method: 'POST',
@@ -8,16 +7,14 @@ const createGame = () => {
         'Content-Type': 'application/json',
       },
       redirect: 'follow',
-      body: JSON.stringify({ name: 'TadeuJSCapstone'})
+      body: JSON.stringify({ name: 'TadeuJSCapstone' }),
 
     });
 
-    return(result.json());
-
+    return (result.json());
   };
 
-  return(gatherData());
-
+  return (gatherData());
 };
 
 export default createGame;
