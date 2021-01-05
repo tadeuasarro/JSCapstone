@@ -1,5 +1,3 @@
-import world from './world';
-import battle from './battle';
+import world from './world/world';
 
-// world();
-battle();
+world();
