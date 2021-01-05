@@ -110,6 +110,7 @@ const world = () => {
       zone.x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
       zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
       this.cameras.main.flash(300);
+      this.scene.switch('BattleScene');
     },
   });
 
@@ -124,7 +125,7 @@ const world = () => {
       default: 'arcade',
       arcade: {
         gravity: { y: 0 },
-        debug: true
+        debug: false
       }
     },
     scene: [
@@ -134,6 +135,8 @@ const world = () => {
   };
 
   var game = new Phaser.Game(config);
+
+  return(game)
 
 };
 
