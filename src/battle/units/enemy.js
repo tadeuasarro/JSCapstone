@@ -11,6 +11,8 @@ const Enemy = () => {
     }
   });
 
+  console.log(char);
+
   return char;
 
 }

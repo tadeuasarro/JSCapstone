@@ -1,6 +1,8 @@
 import Phaser from 'phaser';
 import WorldScene from './worldscene';
 import BootScene from './bootscene';
+import UIScene from '../battle/scenes/interface';
+import BattleScene from '../battle/scenes/battle';
 
 const gameWorld = () => {
   var config = {
@@ -19,7 +21,9 @@ const gameWorld = () => {
     },
     scene: [
       BootScene,
-      WorldScene
+      WorldScene,
+      BattleScene,
+      UIScene
     ]
   };
 
