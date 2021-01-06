@@ -24,7 +24,7 @@ body {
 }
 
 #display p {
-  font-size: 50px;
+  font-size: 70px;
 }
 
 #gameStart,
@@ -36,6 +36,7 @@ body {
 
 #gameStart{
   background-color: white;
+  border: black solid 3px;
   border-radius: 10px;
   text-align: center;
 }
