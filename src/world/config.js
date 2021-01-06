@@ -5,7 +5,7 @@ import UIScene from '../battle/scenes/interface';
 import BattleScene from '../battle/scenes/battle';
 
 const gameWorld = () => {
-  var config = {
+  const config = {
     type: Phaser.AUTO,
     parent: 'content',
     width: 320,
@@ -16,21 +16,21 @@ const gameWorld = () => {
       default: 'arcade',
       arcade: {
         gravity: { y: 0 },
-        debug: true
-      }
+        debug: false,
+      },
     },
     scene: [
       BootScene,
       WorldScene,
       BattleScene,
-      UIScene
-    ]
+      UIScene,
+    ],
   };
 
-  var game = new Phaser.Game(config);
+  const game = new Phaser.Game(config);
 
   return game;
-}
+};
 
 
 export default gameWorld;

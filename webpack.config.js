@@ -11,4 +11,16 @@ module.exports = {
     compress: true,
     port: 9000,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.png$/,
+        loader: "file-loader?mimetype=image/png"
+      },
+    ],
+  },
 };

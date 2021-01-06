@@ -1,10 +1,10 @@
 import Phaser from 'phaser';
-//import BootScene from './scenes/boot';
+// import BootScene from './scenes/boot';
 import BattleScene from './scenes/battle';
 import UIScene from './scenes/interface';
 
 const battle = () => {
-  var config = {
+  const config = {
     type: Phaser.AUTO,
     parent: 'content',
     width: 320,
@@ -14,17 +14,16 @@ const battle = () => {
     physics: {
       default: 'arcade',
       arcade: {
-        gravity: { y: 0 }
-      }
+        gravity: { y: 0 },
+      },
     },
-    scene: [ BattleScene, UIScene ]
+    scene: [BattleScene, UIScene],
   };
 
 
-  var game = new Phaser.Game(config);
+  const game = new Phaser.Game(config);
 
   return game;
-
-}
+};
 
 export default battle;

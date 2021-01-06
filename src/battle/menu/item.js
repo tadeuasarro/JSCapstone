@@ -1,27 +1,26 @@
 import Phaser from 'phaser';
 
 const MenuItem = () => {
-  var item = new Phaser.Class({
+  const item = new Phaser.Class({
     Extends: Phaser.GameObjects.Text,
     initialize:
     function MenuItem(x, y, text, scene) {
-      Phaser.GameObjects.Text.call(this, scene, x, y, text, { color: '#ffffff', align: 'left', fontSize: 15});
+      Phaser.GameObjects.Text.call(this, scene, x, y, text, { color: '#ffffff', align: 'left', fontSize: 15 });
     },
-    select: function() {
+    select() {
       this.setColor('#f8ff38');
     },
-    deselect: function() {
+    deselect() {
       this.setColor('#ffffff');
     },
-    unitKilled: function() {
+    unitKilled() {
       this.active = false;
       this.visible = false;
-    }
+    },
   });
 
 
   return item;
-
-}
+};
 
 export default MenuItem();

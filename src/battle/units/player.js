@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 import Unit from './unit';
 
 const PlayerCharacter = () => {
-  var char = new Phaser.Class({
+  const char = new Phaser.Class({
     Extends: Unit,
 
     initialize:
@@ -10,11 +10,10 @@ const PlayerCharacter = () => {
       Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
       this.flipX = true;
       this.setScale(2);
-    }
+    },
   });
 
   return char;
-
-}
+};
 
 export default PlayerCharacter();
