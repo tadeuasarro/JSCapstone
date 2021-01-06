@@ -1,3 +1,8 @@
-import world from './world';
+import gameWorld from './world/config';
+import battle from './battle';
 
-console.log(world());
+const my_var  = gameWorld;
+
+console.log(my_var.scene.keys);
+
+battle();
