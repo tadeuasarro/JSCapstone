@@ -57,6 +57,7 @@ var WorldScene = new Phaser.Class({
       this.spawns.create(x, y, 20, 20);
     }
     this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this);
+    this.sys.events.on('wake', this.wake, this);
   },
   update: function(time, delta){
     this.player.body.setVelocity(0);
@@ -91,6 +92,12 @@ var WorldScene = new Phaser.Class({
     zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
     this.cameras.main.flash(300);
     this.scene.switch('BattleScene');
+  },
+  wake: function() {
+    this.cursors.left.reset();
+    this.cursors.right.reset();
+    this.cursors.up.reset();
+    this.cursors.down.reset();
   },
 });
 
