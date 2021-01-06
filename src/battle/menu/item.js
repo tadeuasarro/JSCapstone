@@ -12,6 +12,10 @@ const MenuItem = () => {
     },
     deselect: function() {
       this.setColor('#ffffff');
+    },
+    unitKilled: function() {
+      this.active = false;
+      this.visible = false;
     }
   });
 

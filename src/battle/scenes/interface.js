@@ -20,6 +20,24 @@ var UIScene = new Phaser.Class({
     this.graphics.strokeRect(95, 150, 90, 100);
     this.graphics.fillRect(188, 150, 130, 100);
     this.graphics.strokeRect(188, 150, 130, 100);
+
+    this.menus = this.add.container();
+    this.heroesMenu = new HeroesMenu(195, 153, this);
+    this.actionsMenu = new ActionsMenu(100, 153, this);
+    this.enemiesMenu = new EnemiesMenu(8, 153, this);
+    this.currentMenu = this.actionsMenu;
+    this.menus.add(this.heroesMenu);
+    this.menus.add(this.actionsMenu);
+    this.menus.add(this.enemiesMenu);
+    this.battleScene = this.scene.get("BattleScene");
+    this.input.keyboard.on("keydown", this.onKeyInput, this);
+    this.battleScene.events.on("PlayerSelect", this.onPlayerSelect, this);
+    this.events.on("SelectEnemies", this.onSelectEnemies, this);
+    this.events.on("Enemy", this.onEnemy, this);
+    this.sys.events.on('wake', this.createMenu, this);
+    this.message = new Message(this, this.battleScene.events);
+    this.add.existing(this.message);
+    this.createMenu();
   },
   remapHeroes: function() {
     var heroes = this.battleScene.heroes;
@@ -30,7 +48,7 @@ var UIScene = new Phaser.Class({
     this.enemiesMenu.remap(enemies);
   },
   onKeyInput: function(event) {
-    if(this.currentMenu) {
+    if(this.currentMenu && this.currentMenu.selected) {
       if(event.code === "ArrowUp") {
         this.currentMenu.moveSelectionUp();
       } else if(event.code === "ArrowDown") {
@@ -57,6 +75,11 @@ var UIScene = new Phaser.Class({
     this.enemiesMenu.deselect();
     this.currentMenu = null;
     this.battleScene.receivePlayerSelection('attack', index);
+  },
+  createMenu: function() {
+    this.remapHeroes();
+    this.remapEnemies();
+    this.battleScene.nextTurn();
   },
 });
 
