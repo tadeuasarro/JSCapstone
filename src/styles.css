@@ -44,3 +44,21 @@ body {
 #gameStart:hover {
   cursor: pointer;
 }
+
+#playerNameContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  height: 80px;
+}
+
+#playerNameContainer small {
+  border: black solid 1px;
+  background-color: lightsalmon;
+  padding: 5px;
+  margin-top: 5px;
+  width: 75%;
+  text-align: center;
+
+}
