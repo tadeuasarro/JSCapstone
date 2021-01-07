@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import Enemy from '../units/enemy';
 import PlayerCharacter from '../units/player';
-import Score from '../../scoreboard/score';
+import GameOver from '../../scoreboard/gameover';
 
 const BattleScene = new Phaser.Class({
   Extends: Phaser.Scene,
@@ -61,7 +61,8 @@ const BattleScene = new Phaser.Class({
     }
 
     if(victory){
-      Score();
+      const score = parseInt(localStorage.getItem('score'));
+      localStorage.setItem('score', score + 1);
     }
 
     let gameOver = true;
@@ -72,7 +73,8 @@ const BattleScene = new Phaser.Class({
     }
 
     if(gameOver){
-      alert('game over');
+      //console.log(game);
+      GameOver();
     }
 
     return victory || gameOver;
@@ -88,9 +90,9 @@ const BattleScene = new Phaser.Class({
     this.scene.switch('WorldScene');
   },
   startBattle() {
-    const warrior = new PlayerCharacter(this, 250, 50, 'player', 1, 'Warrior', 100, 50);
+    const warrior = new PlayerCharacter(this, 250, 50, 'player', 1, 'Warrior', 100, 40);
     this.add.existing(warrior);
-    const mage = new PlayerCharacter(this, 250, 100, 'player', 4, 'Mage', 80, 50);
+    const mage = new PlayerCharacter(this, 250, 100, 'player', 4, 'Mage', 80, 40);
     this.add.existing(mage);
     const dragonblue = new Enemy(this, 50, 50, 'dragonblue', null, 'Dragon', 50, 100);
     this.add.existing(dragonblue);

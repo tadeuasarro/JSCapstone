@@ -1,6 +1,5 @@
-import gameWorld from './world/config';
+import GameOver from './scoreboard/gameover';
 import './styles.css';
-import image from './bg.png';
 
 const display = document.getElementById('gameStart');
 display.addEventListener('click', () => {
@@ -9,8 +8,9 @@ display.addEventListener('click', () => {
 
   if(playerName.length >= 3){
     localStorage.setItem('player', playerName);
+    localStorage.setItem('score', 0);
     document.body.innerHTML = '';
-    gameWorld();
+    let game = GameOver(true);
   }else{
     const warning = document.createElement('small');
     warning.innerHTML = 'The name must me at least 3 characters long!!!';
