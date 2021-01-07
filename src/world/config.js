@@ -27,11 +27,9 @@ const gameWorld = () => {
     ],
   };
 
-  const game = new Phaser.Game(config);
+  global.game = new Phaser.Game(config);
 
-  //game.destroy(true, false);
-
-  return game;
+  return global.game;
 };
 
 
