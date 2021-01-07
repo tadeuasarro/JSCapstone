@@ -7,7 +7,7 @@ const createGame = () => {
         'Content-Type': 'application/json',
       },
       redirect: 'follow',
-      body: JSON.stringify({ name: 'TadeuJSCapstone' }),
+      body: JSON.stringify({ name: 'TadeuDragonSlayer' }),
 
     });
 

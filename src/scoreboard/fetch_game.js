@@ -1,6 +1,6 @@
 const fetchGame = async () => {
   let result = await fetch(
-    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/XcndOEVAK91fzDURy1fY/scores',
+    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/o5EnkXrtDCElBpymtoHa/scores',
   ).then((response) => response.json());
 
   const length = (result.result.length - 1)
