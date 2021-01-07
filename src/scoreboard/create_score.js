@@ -1,4 +1,4 @@
-const createScore = () => {
+const createScore = (name, score) => {
   const setData = async () => {
     const result = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/XcndOEVAK91fzDURy1fY/scores', {
       method: 'POST',
@@ -8,8 +8,8 @@ const createScore = () => {
       },
       redirect: 'follow',
       body: JSON.stringify({
-        user: 'Tadeu Sarro',
-        score: 50,
+        user: name,
+        score: score,
       }),
 
     });
