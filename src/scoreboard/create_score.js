@@ -8,8 +8,8 @@ const createScore = () => {
       },
       redirect: 'follow',
       body: JSON.stringify({
-        user: 'Chuck Norris',
-        score: 42,
+        user: 'Tadeu Sarro',
+        score: 50,
       }),
 
     });

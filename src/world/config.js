@@ -5,6 +5,7 @@ import UIScene from '../battle/scenes/interface';
 import BattleScene from '../battle/scenes/battle';
 
 const gameWorld = () => {
+  document.body.innerHTML = '';
   const config = {
     type: Phaser.AUTO,
     parent: 'content',

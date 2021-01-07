@@ -1,6 +1,10 @@
 import gameWorld from './world/config';
+import GameOver from './scoreboard/gameover';
 import './styles.css';
 
+GameOver();
+
+/*
 const display = document.getElementById('gameStart');
 display.addEventListener('click', () => {
 
@@ -18,4 +22,5 @@ display.addEventListener('click', () => {
   }
 
 })
+*/
 

@@ -24,12 +24,29 @@ body {
 }
 
 #display p {
-  font-size: 70px;
+  font-size: 60px;
+  background-color: white;
+  border: black solid 5px;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+#display ul {
+  background-color: white;
+  border: black solid 1px;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+#display li {
+  list-style-type: none;
+  margin: 5px 0;
+  text-align: center;
 }
 
 #gameStart,
 #display input {
-  width: 75%;
+  width: 50%;
   padding: 10px;
   font-size: larger;
 }
