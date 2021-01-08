@@ -24,12 +24,29 @@ body {
 }
 
 #display p {
-  font-size: 70px;
+  font-size: 60px;
+  background-color: white;
+  border: black solid 5px;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+#display ul {
+  background-color: white;
+  border: black solid 1px;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+#display li {
+  list-style-type: none;
+  margin: 5px 0;
+  text-align: center;
 }
 
 #gameStart,
 #display input {
-  width: 75%;
+  width: 50%;
   padding: 10px;
   font-size: larger;
 }
@@ -43,4 +60,22 @@ body {
 
 #gameStart:hover {
   cursor: pointer;
+}
+
+#playerNameContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  height: 80px;
+}
+
+#playerNameContainer small {
+  border: black solid 1px;
+  background-color: lightsalmon;
+  padding: 5px;
+  margin-top: 5px;
+  width: 50%;
+  text-align: center;
+
 }

@@ -5,6 +5,7 @@ import UIScene from '../battle/scenes/interface';
 import BattleScene from '../battle/scenes/battle';
 
 const gameWorld = () => {
+  document.body.innerHTML = '';
   const config = {
     type: Phaser.AUTO,
     parent: 'content',
@@ -27,9 +28,9 @@ const gameWorld = () => {
     ],
   };
 
-  const game = new Phaser.Game(config);
+  global.game = new Phaser.Game(config);
 
-  return game;
+  return global.game;
 };
 
 
