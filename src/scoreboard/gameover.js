@@ -9,7 +9,6 @@ const GameOver = async () => {
   const name = localStorage.getItem('player');
   const score = localStorage.getItem('score');
 
-
   localStorage.setItem('score', 0);
 
   global.game.destroy(true, false);
