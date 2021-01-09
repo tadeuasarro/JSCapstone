@@ -9,7 +9,8 @@ const Unit = () => {
     function Unit(scene, x, y, texture, frame, type, hp, damage) {
       Phaser.GameObjects.Sprite.call(this, scene, x, y, texture, frame);
       this.type = type;
-      this.maxHp = this.hp = hp;
+      this.hp = hp;
+      this.maxHp = hp;
       this.damage = damage;
       this.living = true;
       this.menuItem = null;

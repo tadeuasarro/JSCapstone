@@ -12,7 +12,7 @@ const WorldScene = new Phaser.Class({
   create() {
     const map = this.make.tilemap({ key: 'map' });
     const tiles = map.addTilesetImage('spritesheet', 'tiles');
-    const grass = map.createStaticLayer('Grass', tiles, 0, 0);
+    map.createStaticLayer('Grass', tiles, 0, 0);
     const obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
     obstacles.setCollisionByExclusion([-1]);
     this.player = this.physics.add.sprite(50, 100, 'player', 0);
@@ -51,7 +51,7 @@ const WorldScene = new Phaser.Class({
 
     this.physics.add.collider(this.player, obstacles);
     this.spawns = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 30; i += 1) {
       const x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
       const y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
       this.spawns.create(x, y, 20, 20);
@@ -59,7 +59,7 @@ const WorldScene = new Phaser.Class({
     this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this);
     this.sys.events.on('wake', this.wake, this);
   },
-  update(time, delta) {
+  update() {
     this.player.body.setVelocity(0);
     if (this.cursors.left.isDown) {
       this.player.body.setVelocityX(-80);

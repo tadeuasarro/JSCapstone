@@ -9,7 +9,7 @@ const createScore = (name, score) => {
       redirect: 'follow',
       body: JSON.stringify({
         user: name,
-        score: score,
+        score,
       }),
 
     });

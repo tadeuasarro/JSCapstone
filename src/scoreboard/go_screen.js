@@ -1,12 +1,11 @@
+/* eslint import/no-cycle: "off", curly: "off" */
 import gameWorld from '../world/config';
 
 const gameOverScreen = () => {
-
   const display = document.createElement('div');
   display.id = 'display';
 
   const p = document.createElement('p');
-  p.classList.add
   p.innerHTML = 'Game Over!';
 
   display.appendChild(p);
@@ -27,7 +26,6 @@ const gameOverScreen = () => {
   display.appendChild(button);
 
   document.body.appendChild(display);
-
-}
+};
 
 export default gameOverScreen;

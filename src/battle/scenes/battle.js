@@ -1,3 +1,4 @@
+/* eslint import/no-cycle: "off", curly: "off" */
 import Phaser from 'phaser';
 import Enemy from '../units/enemy';
 import PlayerCharacter from '../units/player';
@@ -21,7 +22,7 @@ const BattleScene = new Phaser.Class({
     }
 
     do {
-      this.index++;
+      this.index += 1;
       if (this.index >= this.units.length) {
         this.index = 0;
       }
@@ -39,7 +40,7 @@ const BattleScene = new Phaser.Class({
     }
   },
   receivePlayerSelection(action, target) {
-    if (action == 'attack') {
+    if (action === 'attack') {
       this.units[this.index].attack(this.enemies[target]);
     }
     this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });
@@ -54,25 +55,25 @@ const BattleScene = new Phaser.Class({
   },
   checkEndBattle() {
     let victory = true;
-    for (var i = 0; i < this.enemies.length; i++) {
+    for (let i = 0; i < this.enemies.length; i += 1) {
       if (this.enemies[i].living) {
         victory = false;
       }
     }
 
-    if(victory){
-      const score = parseInt(localStorage.getItem('score'));
+    if (victory) {
+      const score = Number(localStorage.getItem('score'));
       localStorage.setItem('score', score + 1);
     }
 
     let gameOver = true;
-    for (var i = 0; i < this.heroes.length; i++) {
+    for (let i = 0; i < this.heroes.length; i += 1) {
       if (this.heroes[i].living) {
         gameOver = false;
       }
     }
 
-    if(gameOver){
+    if (gameOver) {
       GameOver();
     }
 
@@ -81,7 +82,7 @@ const BattleScene = new Phaser.Class({
   endBattle() {
     this.heroes.length = 0;
     this.enemies.length = 0;
-    for (let i = 0; i < this.units.length; i++) {
+    for (let i = 0; i < this.units.length; i += 1) {
       this.units[i].destroy();
     }
     this.units.length = 0;
