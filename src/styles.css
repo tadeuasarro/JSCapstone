@@ -51,7 +51,7 @@ body {
   font-size: larger;
 }
 
-#gameStart{
+#gameStart {
   background-color: white;
   border: black solid 3px;
   border-radius: 10px;
@@ -77,5 +77,4 @@ body {
   margin-top: 5px;
   width: 50%;
   text-align: center;
-
 }
