@@ -15,7 +15,7 @@ const Message = () => {
       graphics.strokeRect(-90, -15, 180, 30);
       graphics.fillRect(-90, -15, 180, 30);
       this.text = new Phaser.GameObjects.Text(scene, 0, 0, '', {
-        color: '#ffffff', align: 'center', fontSize: 13, wordWrap: { width: 160, useAdvancedWrap: true },
+        color: '#ffffff', align: 'center', fontSize: 13, wordWrap: { width: 60, useAdvancedWrap: true },
       });
       this.add(this.text);
       this.text.setOrigin(0.5);

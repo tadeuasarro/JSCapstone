@@ -11,7 +11,7 @@ const gameStart = () => {
       document.body.innerHTML = '';
       gameWorld();
     } else {
-      document.getElementById('nameWarning').style.display  = 'inline'
+      document.getElementById('nameWarning').style.display = 'inline';
     }
   });
 };

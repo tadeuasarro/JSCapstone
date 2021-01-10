@@ -12,7 +12,7 @@ const gameOverScreen = () => {
 
   const score = document.createElement('span');
   score.classList.add('score');
-  score.innerHTML = "Your score: " + localStorage.getItem('score');
+  score.innerHTML = `Your score: ${localStorage.getItem('score')}`;
 
   display.appendChild(score);
 
