@@ -1,4 +1,5 @@
 import gameWorld from './world/config';
+
 const gameStart = () => {
   const display = document.getElementById('gameStart');
   display.addEventListener('click', () => {
@@ -15,7 +16,6 @@ const gameStart = () => {
       document.getElementById('playerNameContainer').appendChild(warning);
     }
   });
-
-}
+};
 
 export default gameStart;
