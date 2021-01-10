@@ -10,8 +10,19 @@ const gameOverScreen = () => {
 
   display.appendChild(p);
 
+  const score = document.createElement('span');
+  score.classList.add('score');
+  score.innerHTML = "Your score: " + localStorage.getItem('score');
+
+  display.appendChild(score);
+
   const scoreBoard = document.createElement('ul');
   scoreBoard.id = 'scoreBoard';
+
+  const title = document.createElement('li');
+  title.innerHTML = '### Leaderboard ###';
+
+  scoreBoard.appendChild(title);
 
   display.appendChild(scoreBoard);
 

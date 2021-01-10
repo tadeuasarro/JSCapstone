@@ -11,9 +11,7 @@ const gameStart = () => {
       document.body.innerHTML = '';
       gameWorld();
     } else {
-      const warning = document.createElement('small');
-      warning.innerHTML = 'The name must me at least 3 characters long!!!';
-      document.getElementById('playerNameContainer').appendChild(warning);
+      document.getElementById('nameWarning').style.display  = 'inline'
     }
   });
 };
