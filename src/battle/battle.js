@@ -19,7 +19,6 @@ const battle = () => {
     scene: [BattleScene, UIScene],
   };
 
-
   const game = new Phaser.Game(config);
 
   return game;

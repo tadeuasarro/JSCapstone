@@ -1,8 +1,7 @@
 import Phaser from 'phaser';
 import Menu from './menu';
 
-const EnemiesMenu = () => {
-  const enemies = new Phaser.Class({
+  const EnemiesMenu = new Phaser.Class({
     Extends: Menu,
     initialize:
     function EnemiesMenu(x, y, scene) {
@@ -13,7 +12,4 @@ const EnemiesMenu = () => {
     },
   });
 
-  return enemies;
-};
-
-export default EnemiesMenu();
+export default EnemiesMenu;
