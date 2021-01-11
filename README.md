@@ -13,7 +13,12 @@
 ![screenshot](dist/screenshot.png)
 
 #### Livedemo
+
 - [Netlify](https://peaceful-albattani-870785.netlify.app/)
+
+#### Game Design Document
+
+- [Google Docs](https://docs.google.com/document/d/1GLcpJxP0M5cHwXf-yC_D5HH3tL8cHOpvj0sXMWkMjpU/edit?usp=sharing)
 
 ## Built With
 
