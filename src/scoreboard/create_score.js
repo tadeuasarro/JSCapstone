@@ -1,6 +1,8 @@
+import errorHandling from '../helper';
+
 const createScore = (name, score) => {
   const setData = async () => {
-    try{
+    try {
       const result = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/o5EnkXrtDCElBpymtoHa/scores', {
         method: 'POST',
         mode: 'cors',
@@ -16,12 +18,11 @@ const createScore = (name, score) => {
       });
 
       return (result.json());
-    }catch(error){
-      console.log(error);
-      console.log('Please reach out to the responsible for this application!');
+    } catch (error) {
+      errorHandling(error);
+      return (false);
     }
-
-  }
+  };
 
   return (setData());
 };

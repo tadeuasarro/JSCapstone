@@ -1,5 +1,7 @@
+import errorHandling from '../helper';
+
 const fetchGame = async () => {
-  try{
+  try {
     const result = await fetch(
       'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/o5EnkXrtDCElBpymtoHa/scores',
     ).then((response) => response.json());
@@ -17,10 +19,9 @@ const fetchGame = async () => {
     }
 
     return (result.result);
-
-  }catch(error){
-    console.log(error);
-    console.log('Please reach out to the responsible for this application!');
+  } catch (error) {
+    errorHandling(error);
+    return (false);
   }
 };
 
