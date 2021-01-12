@@ -41,10 +41,10 @@
 ### Playing
 
 ##### In the open world:
-- Use the arrow keys to move your character
+- Use the arrow keys to move your character around the map and find enemies in random hidden places!
 
 ##### In a battle
-- Use the arrow keys to change options, use the space bar to select
+- After starting a battle, use the arrow keys to select the enemy you wish to attack, then press the space bar to confirm the attack!
 
 ### Setup
 
