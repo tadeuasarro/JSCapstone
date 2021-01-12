@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import Enemy from '../src/battle/units/enemy';
 import PlayerCharacter from '../src/battle/units/player';
 import Unit from '../src/battle/units/unit';

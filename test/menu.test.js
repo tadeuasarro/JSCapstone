@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import ActionsMenu from '../src/battle/menu/actions';
 import EnemiesMenu from '../src/battle/menu/enemies';
 import HeroesMenu from '../src/battle/menu/heroes';

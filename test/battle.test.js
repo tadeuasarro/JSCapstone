@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import battle from '../src/battle/battle';
 import Message from '../src/battle/message';
 

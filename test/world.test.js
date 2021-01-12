@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import BootScene from '../src/world/bootscene';
 import gameWorld from '../src/world/config';
 import WorldScene from '../src/world/worldscene';

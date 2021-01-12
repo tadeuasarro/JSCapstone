@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import BattleScene from '../src/battle/scenes/battle';
 import UIScene from '../src/battle/scenes/interface';
 
