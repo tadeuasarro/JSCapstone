@@ -1,3 +1,4 @@
+/* eslint import/no-cycle: "off", curly: "off" */
 import Phaser from 'phaser';
 import WorldScene from './worldscene';
 import BootScene from './bootscene';

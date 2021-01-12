@@ -51,31 +51,48 @@ body {
   font-size: larger;
 }
 
-#gameStart{
+#gameStart {
   background-color: white;
   border: black solid 3px;
   border-radius: 10px;
   text-align: center;
+  margin-top: 5px;
 }
 
 #gameStart:hover {
   cursor: pointer;
 }
 
+#outerContainer {
+  height: 133px;
+}
+
+#outerContainer,
 #playerNameContainer {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
-  height: 80px;
+  justify-content: space-between;
 }
 
-#playerNameContainer small {
+#nameWarning {
   border: black solid 1px;
   background-color: lightsalmon;
   padding: 5px;
   margin-top: 5px;
   width: 50%;
   text-align: center;
+  display: none;
+}
 
+#scoreBoard {
+  text-align: justify;
+}
+
+.score {
+  background-color: #fff;
+  border: black solid 1px;
+  border-radius: 5px;
+  padding: 5px;
 }

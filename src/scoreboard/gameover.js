@@ -1,9 +1,9 @@
+/* eslint import/no-cycle: "off", curly: "off" */
 import gameOverScreen from './go_screen';
 import createScore from './create_score';
 import scoreBoard from './board';
 
 const GameOver = async () => {
-
   gameOverScreen();
 
   const name = localStorage.getItem('player');
@@ -16,7 +16,6 @@ const GameOver = async () => {
   await createScore(name, score);
 
   scoreBoard();
-
-}
+};
 
 export default GameOver;

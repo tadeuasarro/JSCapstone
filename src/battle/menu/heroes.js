@@ -1,16 +1,12 @@
 import Phaser from 'phaser';
 import Menu from './menu';
 
-const HeroesMenu = () => {
-  const heroes = new Phaser.Class({
-    Extends: Menu,
-    initialize:
-    function HeroesMenu(x, y, scene) {
-      Menu.call(this, x, y, scene);
-    },
-  });
+const HeroesMenu = new Phaser.Class({
+  Extends: Menu,
+  initialize:
+  function HeroesMenu(x, y, scene) {
+    Menu.call(this, x, y, scene);
+  },
+});
 
-  return heroes;
-};
-
-export default HeroesMenu();
+export default HeroesMenu;

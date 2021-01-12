@@ -1,5 +1,4 @@
 import Phaser from 'phaser';
-// import BootScene from './scenes/boot';
 import BattleScene from './scenes/battle';
 import UIScene from './scenes/interface';
 
@@ -19,7 +18,6 @@ const battle = () => {
     },
     scene: [BattleScene, UIScene],
   };
-
 
   const game = new Phaser.Game(config);
 
