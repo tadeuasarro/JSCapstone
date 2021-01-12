@@ -14,7 +14,7 @@
 
 #### Livedemo
 
-- [Netlify](https://stupefied-visvesvaraya-7865c6.netlify.app/)
+- [Netlify](https://relaxed-leakey-500f5c.netlify.app/)
 
 #### Game Design Document
 
