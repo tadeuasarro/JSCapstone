@@ -35,6 +35,7 @@ const Message = new Phaser.Class({
     this.hideEvent = null;
     this.visible = false;
   },
+
 });
 
 export default Message;
